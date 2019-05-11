@@ -1,0 +1,38 @@
+baseURL = "http://example.org/"
+languageCode = "zh"
+title = "hugo-theme-tiny"
+theme = "hugo-theme-tiny"
+themesDir = "../.."
+hasCJKLanguage = true
+enableRobotsTXT = true
+disableKinds = ["taxonomyTerm"]
+
+[mediaTypes]
+    [mediaTypes."application/atom"]
+        suffixes = ["xml"]
+    [mediaTypes."application/rss"]
+        suffixes = ["xml"]
+
+[outputFormats]
+    [outputFormats.Atom]
+        mediaType = "application/atom"
+        baseName = "atom"
+    [outputFormats.Rss]
+        mediaType = "application/rss"
+        baseName = "feed"
+
+[outputs]
+    home = ["HTML", "Atom", "Rss"]
+    page = ["HTML"]
+    section = ["HTML"]
+    taxonomy = ["HTML"]
+
+[params]
+    authorName = ""
+    email = ""
+    description = ""
+    themeColor = ""
+    favicon = "/fav.ico"
+    logo = "/logo.png"
+    hostName = ""
+    hostURL = ""

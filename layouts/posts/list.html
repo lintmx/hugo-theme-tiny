@@ -1,0 +1,29 @@
+{{ define "main" }}
+<main>
+    {{ $paginator := .Paginate (where .Pages "Type" "posts") }}
+    {{ range $paginator.Pages }}
+        <section>
+            <a href="{{ .RelPermalink }}">
+                <h2>{{ .Title }}</h2>
+                <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format "Jan, _2 2006" }}</time>
+            </a>
+        </section>
+
+    {{ end }}
+
+    {{ if ne $paginator.TotalPages 1 }}
+        <p>
+            {{ if $paginator.HasPrev }}
+                <a href="{{ $paginator.Prev.URL }}"> << </a>
+            {{ else }}
+                <a href></a>
+            {{ end }}
+            {{ if $paginator.HasNext }}
+                <a href="{{ $paginator.Next.URL }}"> >> </a>
+            {{ else }}
+                <a href></a>
+            {{ end }}
+        </p>
+    {{ end }}
+</main>
+{{ end }}

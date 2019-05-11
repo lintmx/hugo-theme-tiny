@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+    {{- partial "head.html" . -}}
+    <body>
+        <header>
+                {{- partial "header.html" . -}}
+        </header>
+        {{- block "main" . }}{{- end }}
+        <footer>
+            {{- partial "footer.html" . -}}
+        </footer>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js" integrity="sha256-aYTdUrn6Ow1DDgh5JTc3aDGnnju48y/1c8s1dgkYPQ8=" crossorigin="anonymous"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+    </body>
+</html>

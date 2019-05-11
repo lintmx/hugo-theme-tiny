@@ -1,0 +1,17 @@
+name = "Tiny"
+license = "MIT"
+licenselink = "https://github.com/lintmx/hugo-theme-tiny/blob/master/LICENSE"
+description = "Yet a theme for hugo."
+homepage = "https://github.com/lintmx/hugo-theme-tiny"
+tags = ["mini", "fast", "tiny"]
+features = ["mini", "fast", "tiny"]
+min_version = "0.41"
+
+[author]
+  name = "lintmx"
+  homepage = "https://lintmx.com/"
+
+[original]
+  name = "hexo-theme-tiny"
+  homepage = "https://lintmx.com/"
+  repo = "https://github.com/lintmx/hexo-theme-tiny"

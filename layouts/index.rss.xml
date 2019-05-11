@@ -1,0 +1,25 @@
+{{ `<?xml version="1.0"?>` | safeHTML }}
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+   <channel>
+      <title>{{ .Site.Title }}</title>
+      <link>{{ .Site.BaseURL | absURL }}</link>
+      <description>{{ .Site.Params.Description }}</description>
+      <language>{{ .Site.LanguageCode }}</language>
+      <lastBuildDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</lastBuildDate>
+      <docs>http://blogs.law.harvard.edu/tech/rss</docs>
+      <generator>Hugo -- gohugo.io</generator>
+      <managingEditor>{{ .Site.Params.Email }} ({{ .Site.Params.AuthorName }})</managingEditor>
+      <webMaster>{{ .Site.Params.Email }} ({{ .Site.Params.AuthorName }})</webMaster>
+
+      <atom:link href="{{ "feed.xml" | absURL }}" rel="self" type="application/rss+xml" />
+      {{ range .Pages }}
+      <item>
+         <title>{{ .Title }}</title>
+         <link>{{ .Permalink }}</link>
+         <description>{{ `<![CDATA[` | safeHTML}}{{ .Content | safeHTML }}]]></description>
+         <pubDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</pubDate>
+         <guid>{{ .Permalink }}</guid>
+      </item>
+      {{ end }}
+   </channel>
+</rss>

@@ -1,0 +1,17 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="theme-color" content="{{ .Site.Params.ThemeColor | default "#FFF" }}">
+    <meta name="author" content="{{ .Site.Params.AuthorName }}">
+    <meta name="desciption" content="{{ .Site.Params.Description }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge, chrome=1">
+
+    <title>{{ .Title | default .Site.Title }}</title>
+
+    <link rel="icon" href="{{ .Site.Params.Favicon | default "/fav.ico" }}">
+    {{ $options := (dict "targetPath" "css/main.css" "outputStyle" "compressed" "enableSourceMap" false) }}
+    {{ $style := resources.Get "sass/main.sass" | resources.ToCSS $options }}
+    {{ $styleCSS := $style | resources.Fingerprint "sha512"}}
+    <link rel="stylesheet" href="{{ $style.Permalink }}" media="all" integrity="{{ $styleCSS.Data.Integrity }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/default.min.css" integrity="sha256-zcunqSn1llgADaIPFyzrQ8USIjX2VpuxHzUwYisOwo8=" crossorigin="anonymous" />
+</head>

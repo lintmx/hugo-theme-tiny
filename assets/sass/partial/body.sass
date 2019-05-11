@@ -1,0 +1,80 @@
+body
+    font-family: "San Francisco", "Helvetica Neue", "Noto Sans", Roboto, "Droid Sans", Helvetica, Tahoma, Arial, "Hiragino Sans GB W3", "Hiragino Sans GB", "冬青黑体", "Noto Sans CJK", "Droid Sans Fallback", "WenQuanYi Micro Hei", "文泉驿微米黑", "Microsoft YaHei", "微软雅黑", sans-serif
+    background-color: rgb(247, 247, 247)
+    p
+        color: rgb(49, 49, 49)
+
+a
+    color: rgb(119, 119, 119)
+    text-decoration: none
+
+a:hover
+    text-shadow: 0 0 .15rem rgb(165, 165, 165)
+
+h1,h2,h3,h4,h5,h6
+    color: rgb(51, 51, 51)
+
+header,main,footer
+    margin: 0 auto
+    max-width: 60rem
+
+::selection
+    color: rgb(196, 196, 196)
+
+::-moz-selection
+    color: rgb(196, 196, 196)
+
+main>section
+    padding: 0 2rem
+
+    &>h1
+        font-size: 2rem
+        margin: .75rem 0
+
+        &>a
+            color: rgb(32, 32, 32)
+
+        &~time
+            color: rgb(128, 128, 128)
+            font-size: 0.8rem
+            font-weight: 200
+            padding-left: 1rem
+
+        &~span
+            margin-left: 2rem
+            font-size: 0.75rem
+            font-weight: 200
+
+        &~span a
+            margin: 0 .5rem
+
+    &>article
+        font-size: 1rem
+        font-weight: 200
+        line-height: 2rem
+
+        &~a
+            font-size: .75rem
+            margin: .25rem 0
+            padding-left: 1rem
+
+        img
+            max-width: 100%
+
+    &~p
+        margin-top: 1.5rem
+        margin-bottom: 1.5rem
+
+    &~p a
+        font-size: 1.25rem
+        display: inline-block
+
+    &~p a:last-child
+        float: right
+
+    &>hr
+        width: 10%;
+        margin: 3rem auto;
+        border: 0;
+        border-top: .3rem solid rgb(204, 204, 204);
+        border-radius: 10rem

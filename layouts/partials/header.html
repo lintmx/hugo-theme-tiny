@@ -1,0 +1,6 @@
+<img src="{{ .Site.Params.Logo | default "/logo.png" }}" />
+<a href="{{ .Site.BaseURL | absURL }}">{{ .Site.Title }}</a>
+<nav>
+    <a href="{{ "posts" | relURL }}">Archive</a>
+    <a href="{{ "about" | relURL }}">About</a>
+</nav>
