@@ -8,6 +8,8 @@
 
     <title>{{ .Title | default .Site.Title }}</title>
 
+    <link rel="alternate" type="application/rss+xml" title="{{ .Site.Params.Description }}" href="{{ "feed.xml" | absURL }}" />
+    <link rel="alternate" type="application/atom+xml" title="{{ .Site.Params.Description }}" href="{{ "atom.xml" | absURL }}" />
     <link rel="icon" href="{{ .Site.Params.Favicon | default "/fav.ico" }}">
     {{ $options := (dict "targetPath" "css/main.css" "outputStyle" "compressed" "enableSourceMap" false) }}
     {{ $style := resources.Get "sass/main.sass" | resources.ToCSS $options }}
