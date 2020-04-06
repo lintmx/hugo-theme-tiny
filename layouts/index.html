@@ -1,6 +1,6 @@
 {{ define "main" }}
 <main>
-    {{ $paginator := .Paginate (where .Pages "Type" "posts") }}
+    {{ $paginator := .Paginate (where .Site.RegularPages "Type" "posts") }}
     {{ range $paginator.Pages }}
         <section>
             <h1><a href="{{ .RelPermalink }}">{{ .Title }}</a></h1>
